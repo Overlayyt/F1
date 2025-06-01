@@ -25,35 +25,6 @@ video, canvas {
   z-index: 1;
 }
 
-/* Loading Indicator */
-.loading {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffd700;
-  padding: 15px 25px;
-  border-radius: 8px;
-  z-index: 100;
-  font-size: 18px;
-}
-
-/* Error Message */
-.error-message {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 0, 0, 0.7);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  z-index: 100;
-  max-width: 80%;
-  text-align: center;
-}
-
 /* Branding */
 #branding {
   position: fixed;
@@ -65,9 +36,6 @@ video, canvas {
   font-size: 24px;
   color: #ffd700;
   letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .camera-icon {
@@ -146,7 +114,14 @@ video, canvas {
   transform: scale(1.05);
 }
 
-/* Snapshot Button */
+.label {
+  color: #ffd700;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+/* Snapshot Button (Top Right) */
 #snapshot-btn {
   position: fixed;
   top: 20px;
@@ -164,101 +139,4 @@ video, canvas {
 
 #snapshot-btn:hover {
   background-color: #e6c200;
-}
-
-/* Help Button */
-.help-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffd700;
-  color: #000;
-  border: none;
-  font-weight: bold;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-  background-color: #1a1a1a;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #ffd700;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 8px;
-  position: relative;
-}
-
-.modal-content h2 {
-  color: #ffd700;
-  margin-bottom: 15px;
-  font-family: 'Cinzel', serif;
-}
-
-.modal-content ol {
-  padding-left: 20px;
-}
-
-.modal-content li {
-  margin-bottom: 10px;
-}
-
-.close {
-  color: #ffd700;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #fff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  #jewelry-mode {
-    top: 80px;
-    right: 10px;
-  }
-  
-  .options-group {
-    bottom: 15px;
-    padding: 8px 12px;
-    gap: 8px;
-  }
-  
-  .options-group button img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  #branding {
-    font-size: 20px;
-  }
-  
-  .modal-content {
-    margin: 30% auto;
-    width: 90%;
-  }
 }

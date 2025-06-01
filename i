@@ -8,12 +8,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Loading Indicator -->
+  <div id="loading-indicator" class="loading">
+    Loading jewelry options...
+  </div>
+
+  <!-- Error Message Container -->
+  <div id="error-message" class="error-message" style="display: none;"></div>
+
+  <!-- Video and Canvas Elements -->
   <video id="webcam" autoplay muted playsinline></video>
   <canvas id="overlay"></canvas>
 
   <!-- Branding with Camera Icon -->
   <div id="branding">
-    <img src="cameraicon.png" alt="Camera Icon" class="camera-icon" style="width: 52px; height: 52px;"  />
+    <img src="cameraicon.png" alt="Camera Icon" class="camera-icon" style="width: 52px; height: 52px;" />
+    <span>Virtual Jewelry Try-On</span>
   </div>
 
   <!-- Mode Selection Buttons -->
@@ -29,15 +39,15 @@
 
   <!-- Necklace Options -->
   <div id="necklace-options" class="options-group" style="display: none;">
-
     <!-- Dynamically populated -->
   </div>
 
-  <!-- Save Snapshot Button (Top Right) -->
- <button id="snapshot-btn" onclick="takeSnapshot()" style="background: none; border: none; padding: 0; cursor: pointer;">
-  <img src="camera-icon.png" alt="Camera Icon" style="width: 32px; height: 32px;" />
-</button>
-<!-- Help Button -->
+  <!-- Save Snapshot Button -->
+  <button id="snapshot-btn" onclick="takeSnapshot()" style="background: none; border: none; padding: 0; cursor: pointer;">
+    <img src="camera-icon.png" alt="Camera Icon" style="width: 32px; height: 32px;" />
+  </button>
+
+  <!-- Help Button -->
   <button id="help-btn" class="help-button" onclick="showHelp()">?</button>
 
   <!-- Help Modal -->
