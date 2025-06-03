@@ -8,12 +8,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Loading Indicator -->
+  <div id="loading-indicator" class="loading">
+    Loading jewelry options...
+  </div>
+
+  <!-- Error Message Container -->
+  <div id="error-message" class="error-message" style="display: none;"></div>
+
+  <!-- Video and Canvas Elements -->
   <video id="webcam" autoplay muted playsinline></video>
   <canvas id="overlay"></canvas>
 
   <!-- Branding with Camera Icon -->
   <div id="branding">
     <img src="cameraicon.png" alt="Camera Icon" class="camera-icon" style="width: 52px; height: 52px;" />
+    <span>Virtual Jewelry Try-On</span>
   </div>
 
   <!-- Mode Selection Buttons -->
@@ -32,17 +42,18 @@
     <!-- Dynamically populated -->
   </div>
 
-  <!-- Save Snapshot Button (Top Right) -->
+  <!-- Save Snapshot Button -->
   <button id="snapshot-btn" onclick="takeSnapshot()" style="background: none; border: none; padding: 0; cursor: pointer;">
     <img src="camera-icon.png" alt="Camera Icon" style="width: 32px; height: 32px;" />
   </button>
 
-  <button id="help-btn" class="help-button" aria-label="Help">?</button>
+  <!-- Help Button -->
+  <button id="help-btn" class="help-button" onclick="showHelp()">?</button>
 
   <!-- Help Modal -->
-  <div id="help-modal" class="modal">
+  <div id="help-modal" class="modal" style="display: none;">
     <div class="modal-content">
-      <span class="close-btn" aria-label="Close help">&times;</span>
+      <span class="close" onclick="hideHelp()">&times;</span>
       <h2>How to Use</h2>
       <ol>
         <li>Allow camera access when prompted</li>
