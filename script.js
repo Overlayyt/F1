@@ -206,49 +206,4 @@ function takeSnapshot() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-
-  // Add share button to UI
-  const existingShareBtn = document.getElementById('share-btn');
-  if (existingShareBtn) {
-    existingShareBtn.remove();
-  }
-
-  const shareBtn = document.createElement('button');
-  shareBtn.id = 'share-btn';
-  shareBtn.textContent = 'Share';
-  shareBtn.style.position = 'fixed';
-  shareBtn.style.bottom = '20px';
-  shareBtn.style.right = '20px';
-  shareBtn.style.padding = '10px 20px';
-  shareBtn.style.backgroundColor = '#4CAF50';
-  shareBtn.style.color = 'white';
-  shareBtn.style.border = 'none';
-  shareBtn.style.borderRadius = '5px';
-  shareBtn.style.cursor = 'pointer';
-  shareBtn.style.zIndex = '1000';
-  
-  shareBtn.onclick = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: 'My Jewelry Look',
-        text: 'Check out my virtual jewelry try-on!',
-        url: dataURL
-      }).catch(err => {
-        console.error('Error sharing:', err);
-        // Fallback for when sharing fails
-        alert('Sharing failed. You can save the image and share it manually.');
-      });
-    } else {
-      // Fallback for browsers that don't support Web Share API
-      alert('Web Share not supported. You can save the image and share it manually.');
-    }
-  };
-
-  document.body.appendChild(shareBtn);
-
-  // Remove share button after 30 seconds
-  setTimeout(() => {
-    const btn = document.getElementById('share-btn');
-    if (btn) btn.remove();
-  }, 30000);
 }
